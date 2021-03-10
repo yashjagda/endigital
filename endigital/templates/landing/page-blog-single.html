@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<br><br><br><br><br><br><br>
+<body class="header-fixed sidebar-right site-layout-full-width header-style-1 has-topbar topbar-style-1 menu-has-search menu-has-cart blog-archive">
+
+<div id="wrapper" class="animsition">
+<div id="page" class="clearfix">
+    <!-- Header Wrap -->
+   
+
+    <!-- Featured Title -->
+    <div id="featured-title" class="featured-title clearfix">
+        <div id="featured-title-inner" class="themesflat-container clearfix">
+            <div class="featured-title-inner-wrap">
+                <div class="featured-title-heading-wrap">
+                    <h1 class="featured-title-heading">
+                        News
+                    </h1>
+                </div>
+                <div id="breadcrumbs">
+                    <div class="breadcrumbs-inner">
+                        <div class="breadcrumb-trail">
+                            <a href="home.html" class="trail-begin">Home</a>
+                            <span class="sep"><i class="finance-icon-chevron-right"></i></span>
+                            <span class="trail-end">News</span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.featured-title-inner-wrap -->
+        </div><!-- /#featured-title-inner -->            
+    </div>
+    <!-- End Featured Title -->
+
+    <!-- Main Content -->
+    <div id="main-content" class="site-main clearfix">
+        <div id="content-wrap" class="themesflat-container">
+            <div id="site-content" class="site-content clearfix">
+                <div id="inner-content" class="inner-content-wrap">
+                    <article class="hentry">
+                        <div class="post-content-single-wrap">
+                            <div class="post-media clearfix">
+                                <a href="#"><img src="{{blog_detail.imageURL}}" alt="Image"></a>
+                            </div><!-- /.post-media -->
+
+                            <div class="post-content-wrap">
+                                <h2 class="post-title">
+                                    <span class="post-title-inner">
+                                        <a href="page-blog-single.html">{{blog_detail.title}}</a>
+                                    </span>
+                                </h2><!-- /.post-title -->
+
+                                <div class="post-meta style-1">
+                                    <div class="post-meta-content">
+                                        <div class="post-meta-content-inner">
+                                            <span class="post-meta-categories item">
+                                                <span class="inner">
+                                                    <a href="#" rel="category">{{blog_detail.category}}</a>
+                                                </span>
+                                            </span>
+
+                                            <span class="post-by-author item">
+                                                <span class="inner"><a href="#" title="" rel="author">{{blog_detail.author}}</a></span>
+                                            </span>
+
+                                           
+                                        </div>
+
+                                        <ul class="post-date">
+                                            <li class="date">
+                                                <span class="day"> {{blog_detail.dateDay}} </span>        
+                                            </li>
+                                            <li class="month">
+                                                {{blog_detail.dateMonth}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.post-meta -->
+
+                                <div class="post-content post-excerpt">
+                                   <p>{{blog_detail.content}}</p>
+                                </div><!-- /.post-excerpt -->
+
+                               
+                            </div><!-- /.post-content-wrap -->
+                        </div><!-- /.post-content-single-wrap -->                        
+                    </article>
+
+                
+
+                </div><!-- /#inner-content -->
+            </div><!-- /#site-content -->
+
+            <div id="sidebar">
+                <div id="inner-sidebar" class="inner-content-wrap">
+                   
+
+
+                    <div class="widget widget_recent_news margin-bottom-41">
+                        <h2 class="widget-title margin-bottom-21"><span>Lastest Posts</span></h2>
+                        <ul class="recent-news clearfix">
+                            <li class="clearfix">
+                                <div class="thumb margin-top-6">
+                                    <span class="icon  finance-icon-pen"></span>
+                                </div><!-- /.thumb -->
+
+                                <div class="texts">
+                                    <h3><a href="#">Asia shares fail to bounce with wall street</a></h3>
+                                    <span class="post-date"><span class="entry-date">02 Feb 2018</span></span>
+                                </div><!-- /.texts -->
+                            </li>
+
+                            <li class="clearfix">
+                                <div class="thumb margin-top-6">
+                                    <span class="icon  finance-icon-pen"></span>
+                                </div><!-- /.thumb -->
+
+                                <div class="texts">
+                                    <h3><a href="#">Dollar slips versus yen as trade tensions outlook</a></h3>
+                                    <span class="post-date"><span class="entry-date">02 Feb 2018</span></span>
+                                </div><!-- /.texts -->
+                            </li>
+
+                            <li class="clearfix">
+                                <div class="thumb margin-top-6">
+                                    <span class="icon  finance-icon-pen"></span>
+                                </div><!-- /.thumb -->
+
+                                <div class="texts">
+                                    <h3><a href="#">Wall Street taking notes on Spotify debut</a></h3>
+                                    <span class="post-date"><span class="entry-date">02 Feb 2018</span></span>
+                                </div><!-- /.texts -->
+                            </li>
+                        </ul>
+                    </div><!-- /.widget_recent_news -->
+
+                   
+                </div><!-- /#inner-sidebar -->
+            </div><!-- /#sidebar -->
+        </div><!-- /#content-wrap -->
+    </div><!-- /#main-content -->
+
+   
+
+    <!-- Bottom -->
+    <div id="bottom" class="clearfix style-1">
+        <div id="bottom-bar-inner" class="themesflat-container">
+            <div class="bottom-bar-inner-wrap">
+                <div class="bottom-bar-content">
+                    <div id="copyright" class="padding-left-9">
+                        &copy; <a href="#">COPYRIGHT FINANCE</a>. DESIGN BY @DOANDU WITH LOVE.
+                    </div><!-- /#copyright -->
+                </div><!-- /.bottom-bar-content -->
+
+                <div class="bottom-bar-menu">
+                    <ul class="bottom-nav">
+                        <li class="menu-item"><a href="#">About Us</a></li>
+                        <li class="menu-item"><a href="#">Terms</a></li>
+                        <li class="menu-item"><a href="#">Services</a></li>
+                        <li class="menu-item"><a href="#">Contacts</a></li>
+                    </ul>
+                </div><!-- /.bottom-bar-menu -->
+            </div>
+        </div>
+    </div><!-- /#bottom -->
+</div><!-- /#page -->
+</div><!-- /#wrapper -->
+
+<a id="scroll-top"></a>
+
+
+
+
+</body>
+
+<!-- Mirrored from themesflat.com/html/ficonsu/page-blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Mar 2021 17:51:07 GMT -->
+</html>
+
+{% endblock %}
