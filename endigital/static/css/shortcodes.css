@@ -59,7 +59,7 @@
 /* Columns
 -------------------------------------------------------------- */    
 /* Style 1 */
-.half-background.style-1 { background-image:url('../img/video/bg_video1.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
+.half-background.style-1 { background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
 .half-background.style-2 { background-image:url('../img/video/bg_video2.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
 .half-background.style-3 { background-image:url('../img/img-single/img-single1.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
 
@@ -302,7 +302,7 @@
 .themesflat-headings.style-1 .sep,
 .themesflat-headings.style-2 .sep { width: 84px; height: 3px; background-color: #00abc9; }
 .themesflat-headings.style-1 .sub-heading,
-.themesflat-headings.style-2 .sub-heading { font-size: 18px; line-height: 28px; margin-top: 14px; }
+.themesflat-headings.style-2 .sub-heading { font-size: 18px; line-height: 28px; margin-top: 14px; font-family: "Montserrat", sans-serif; }
 .themesflat-headings.style-2 .sub-heading { max-width: 800px; margin-bottom: 24px; }
 .themesflat-headings.style-3 .heading { margin-bottom: 10px; }
 .themesflat-headings.style-4 .heading { margin-bottom: 14px; }
@@ -451,7 +451,19 @@
 /* Icon left */
 .themesflat-icon-box.icon-left { position: relative; }
 .themesflat-icon-box.icon-left .icon-wrap,
-.themesflat-icon-box.icon-left .image-wrap { position: absolute; left: 0; top: 1px; }
+.themesflat-icon-box.icon-left .image-wrap { position: absolute; left: 0; top: 25px; width: 70px;
+    height: 70px;
+    font-size: 35px;
+    line-height: 67px;
+	filter: drop-shadow(1px 1px 2px #222);
+	transition: all 0.3s;
+} 
+.themesflat-icon-box.icon-left .image-wrap:hover {
+	transform: scale(1.1) translateY(0.2rem);
+	-webkit-filter: drop-shadow(1.5px 1.5px 4px #0d0e0d);
+	filter: drop-shadow(1.5px 1.5px 4px #0d0e0d);
+	z-index: 25;
+  }
 .themesflat-icon-box.icon-left .desc > span { display: block; }
 
 /* Icon right */

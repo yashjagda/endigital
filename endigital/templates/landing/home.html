@@ -15,10 +15,12 @@
                             <div id="rev-slider1" class="rev_slider fullwidthabanner">
                                 <ul>
                                     <!-- Slide 1 -->
+                                    {%for home in home%}
                                     <li data-transition="random">
                                         <!-- Main Image -->
-                                        <img src="{% static 'img/slider/slider-bg-1.jpg' %}" alt="" data-bgposition="center center" data-no-retina>
-                                       
+                                        
+                                        <img src="{{home.banner_image1}}" alt="" data-bgposition="center center" data-no-retina>
+                                        
                                         <!-- Layers -->
                                         <div class="tp-caption tp-resizeme text-white font-heading font-weight-700"
                                             data-x="['left','left','left','center']" data-hoffset="['-5','-5','0','0']"
@@ -37,7 +39,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                            30 YEARS PROVIDING<br>FINANCIAL SERVICES
+                                            {{home.banner1_h1 | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption sub-title text-white"
@@ -57,7 +59,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                            Appropriate and sufficient financing for<br>a company is crucially important for its long-term success.
+                                            {{home.banner1_caption | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption"
@@ -75,6 +77,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
+                                            <a href="#request" class="themesflat-button accent big video"><i class="flat-icon-check-1 font-size-25"></i>Request Quote</a>
                                         </div>
 
                                         <div class="tp-caption"
@@ -94,13 +97,16 @@
                                             data-responsive_offset="on">
                                          </div>
                                     </li>
+                                    {% endfor %}
                                     <!-- /End Slide 1 -->
 
                                     <!-- Slide 2 -->
+                                    {%for home in home%}
                                     <li data-transition="random">
                                         <!-- Main Image -->
-                                        <img src="{% static 'img/slider/slider-bg-3.jpg' %}" alt="" data-bgposition="center center" data-no-retina>
-                                       
+                                        
+                                        <img src="{{home.banner_image2}}" alt="" data-bgposition="center center" data-no-retina>
+                                        
                                         <!-- Layers -->
                                         <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-center"
                                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -119,7 +125,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                            FULLY INDEPENDENT
+                                            {{home.banner2_h1 | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption tp-resizeme text-white text-center"
@@ -139,7 +145,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                             We're not beholden to any corporate agenda—our focus is your success<br>and clients enjoy direct access to the firm's owners.
+                                            {{home.banner2_caption | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption text-center"
@@ -176,12 +182,15 @@
                                             data-responsive_offset="on">
                                          </div>
                                     </li>
+                                    {% endfor %}
                                     <!-- /End Slide 2 -->
 
                                     <!-- Slide 3 -->
+                                    {%for home in home%}
                                     <li data-transition="random">
                                         <!-- Main Image -->
-                                        <img src="{% static 'img/slider/slider-bg-4.jpg' %}" alt="" data-bgposition="center center" data-no-retina>
+                                        
+                                        <img src="{{home.banner_image3}}" alt="" data-bgposition="center center" data-no-retina>
                                        
                                        <!-- Layers -->
                                         <div class="tp-caption tp-resizeme text-white font-heading font-weight-700 text-right"
@@ -201,7 +210,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                            LolzoPolzo<br>Digital Marketing
+                                            {{home.banner3_h1 | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption sub-title text-white text-right"
@@ -221,7 +230,7 @@
                                             data-splitin="none" 
                                             data-splitout="none" 
                                             data-responsive_offset="on">
-                                            Appropriate and sufficient financing for<br>a company is crucially important for its long-term success.
+                                            {{home.banner3_caption | linebreaksbr}}
                                         </div>
 
                                         <div class="tp-caption text-right"
@@ -259,6 +268,7 @@
                                           </div>
                                     </li>
                                     <!-- /End Slide 3 -->
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -270,46 +280,60 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="themesflat-spacer clearfix" data-desktop="92" data-mobi="60" data-smobi="60"></div>
-                                        {%for service in services%}
+                                        {%for home in home%}
                                         <div class="themesflat-headings style-1 clearfix text-center padding-left-32">
-                                        	<h2 class="heading clearfix">{{service.heading}} </h2>
+                                        	<h1 class="heading clearfix">{{home.section1_heading}} </h1>
                                         	<div class="sep clearfix"></div>
-                                        	<p class="sub-heading clearfix">{{service.service_content}}</p>
+                                        	<p class="sub-heading clearfix">{{home.section1_content|linebreaksbr}}</p>
                                         </div><!-- /.themesflat-headings -->
                                         {%endfor%}
 										<div class="themesflat-spacer clearfix" data-desktop="50" data-mobi="40" data-smobi="40"></div>
                                     </div><!-- /.col-md-12 -->
-                                    {%for service in servicesContent%}
-                                    <div class="col-md-4">
-                                        <div class="themesflat-image-box style-1 clearfix">
-                                            <div class="item">
-                                                <div class="inner">
-                                                    <div class="thumb"><img src="{{service.imageURL}}" alt="Endigital Image"></div>
+                                 
 
-                                                    <div class="text-wrap">
-                                                        <h3 class="title"><a target="_blank" href="#">{{service.serviceName}}</a></h3>
-
-                                                        <div class="desc">{{service.description}}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.themesflat-image-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40"></div>
-                                    </div><!-- /.col-md-4 -->
-                                    {%endfor%}
-
-                                    <div class="col-md-12">
-                                        <div class="themesflat-spacer clearfix" data-desktop="90" data-mobi="60" data-smobi="60"></div>
-                                    </div><!-- /.col-md-12 -->
+                                    
                                 </div><!-- /.row -->
                             </div><!-- /.container -->
                         </div>
                         <!-- END SERVICES IMAGEBOXS -->
 
+
+                      
+
+                        <div class="row-video">
+                            <div class="container">
+                               
+                                <div class="row equalize sm-equalize-auto">
+                                    <div class="col-md-6">
+                                        <div class="themesflat-spacer clearfix" data-desktop="92" data-mobi="60" data-smobi="60"></div>
+                                        {%for home in home%}
+                                        <div class="themesflat-headings style-1 clearfix text-center padding-left-32">
+                                            <h4 class="heading clearfix">{{home.section2_heading}} </h4>
+                                            <div class="sep clearfix"></div>
+                                            <p class="sub-heading clearfix">{{home.section2_content|linebreaksbr}}</p>
+                                        </div><!-- /.themesflat-headings -->
+                                        
+                                        <div class="themesflat-spacer clearfix" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+                                    </div><!-- /.col-md-6 -->
+
+                                    <div class="col-md-6 section2-wrap">
+                                        <div class="">
+                                            <img  src="{{home.section2_imageURL}}">
+                                                
+                                        </img>
+                                        </div><!-- /.themesflat-icon -->
+                                    </div><!-- /.col-md-6 -->
+                                    {%endfor%}
+                                </div>
+                                <div class="themesflat-spacer clearfix" data-desktop="80" data-mobi="60" data-smobi="60"></div>
+                                <div class="border-h-1 dark"></div>
+                            </div>
+                        </div>
+
                         <!-- FACTS -->
                         <div class="row-facts-1 parallax parallax-overlay">
                             <div class="bg-parallax-overlay overlay-black"></div>
+                            {% for home in home %}
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -322,11 +346,11 @@
                                                 <div class="inner">
                                                     <div class="text-wrap">
                                                         <div class="number-wrap font-heading">
-                                                            <span class="prefix">FOUNDED<br>IN </span><span class="number accent" data-speed="3000" data-to="1988" data-inviewport="yes">1988</span><span class="suffix">.</span>
+                                                            <span class="prefix">FOUNDED<br>IN </span><span class="number accent" data-speed="15000" data-to="2020" data-inviewport="no">2020</span><span class="suffix">.</span>
                                                         </div>
-
+                            
                                                         <div class="sep"></div>
-                                                        <h3 class="heading">We become one of the largest financial services providers</h3>
+                                                        <h3 class="heading">{{home.section3_content}}</h3>
                                                     </div>
                                                 </div>
                                             </div><!-- /.themesflat-counter -->
@@ -341,11 +365,11 @@
                                             <div class="inner">
                                                 <div class="text-wrap">
                                                     <div class="number-wrap font-heading">
-                                                        <span class="prefix"></span><span class="number accent" data-speed="3000" data-to="7513" data-inviewport="yes">7513</span><span class="suffix">+</span>
+                                                        <span class="prefix"></span><span class="number accent" data-speed="2000" data-to="{{home.section3_percentage1}}" data-inviewport="yes">{{home.section3_percentage1}}</span><span class="suffix">%</span>
                                                     </div>
 
                                                     <div class="sep"></div>
-                                                    <h3 class="heading">HAPPY CUSTOMERS</h3>
+                                                    <h3 class="heading">{{home.section3_percentage1_heading}}</h3>
                                                 </div>
 
                                                 <div class="border-right-2"></div>
@@ -362,11 +386,11 @@
                                             <div class="inner">
                                                 <div class="text-wrap">
                                                     <div class="number-wrap font-heading">
-                                                        <span class="prefix"></span><span class="number accent" data-speed="3000" data-to="1290" data-inviewport="yes">1290</span><span class="suffix">+</span>
+                                                        <span class="prefix"></span><span class="number accent" data-speed="3000" data-to="{{home.section3_percentage2}}" data-inviewport="yes">{{home.section3_percentage2}}</span><span class="suffix">%</span>
                                                     </div>
 
                                                     <div class="sep"></div>
-                                                    <h3 class="heading">EXPERT ADVISORS</h3>
+                                                    <h3 class="heading">{{home.section3_percentage2_heading}}</h3>
 
                                                     <div class="border-right-2"></div>
                                                 </div>
@@ -383,11 +407,11 @@
                                             <div class="inner">
                                                 <div class="text-wrap">
                                                     <div class="number-wrap font-heading">
-                                                        <span class="prefix"></span><span class="number accent" data-speed="3000" data-to="2684" data-inviewport="yes">2684</span><span class="suffix">+</span>
+                                                        <span class="prefix"></span><span class="number accent" data-speed="3000" data-to="{{home.section3_percentage3}}" data-inviewport="yes">{{home.section3_percentage3}}</span><span class="suffix">%</span>
                                                     </div>
 
                                                     <div class="sep"></div>
-                                                    <h3 class="heading">PROJECT SUCCESS</h3>
+                                                    <h3 class="heading">{{home.section3_percentage3_heading}}</h3>
                                                 </div>
                                             </div>
                                         </div><!-- /.themesflat-counter -->
@@ -399,138 +423,63 @@
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                             </div><!-- /.container -->
+                            {% endfor %}
                         </div>
                         <!-- END FACTS 1 -->
 
                        
 
                         <!-- ANALYSIS -->
-                        <div class="row-services">
+                        <div class="row-services" id="services">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="themesflat-spacer clearfix" data-desktop="91" data-mobi="40" data-smobi="40"></div>
-
+                                        {% for home in home %}
                                         <div class="themesflat-headings style-2 clearfix text-center padding-left-24">
-                                            <h2 class="heading clearfix">OUR ANALYSIS COVERS</h2>                                            
-                                            <p class="sub-heading clearfix">We have knowledgeable practitioners including a Certified Financial Planner, a Certified Investment Management Analyst, an attorney, and a tax practitioner.</p>
+                                            <h2 class="heading clearfix">{{home.section4_heading}}</h2>                                            
+                                            <p class="sub-heading clearfix">{{home.section4_content|linebreaksbr}}</p>
                                             <div class="sep clearfix"></div>
                                         </div><!-- /.themesflat-headings -->
-
+                                        {% endfor %}
                                         <div class="themesflat-spacer clearfix" data-desktop="60" data-mobi="60" data-smobi="60"></div>
                                     </div><!-- /.col-md-12 -->
 
-                                    <div class="col-md-4">
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-bank-2"></i>
+                                    <div class="col-md-6">
+                                        {% for services in services_off_content1 %}
+                                        <div class="themesflat-icon-box style-3 height-fix clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
+                                            <div class="image-wrap">
+                                                <img src="{{services.imageURL}}" alt="">
                                             </div>
 
-                                            <h3 class="heading"><a href="#">LOAN INVESTMENT</a></h3>
+                                            <h3 class="heading"><a href="/services/{{services.services_Name}}">{{services.services_Name}}</a></h3>
 
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
+                                            <p class="description">{{services.description|linebreaksbr}}</p>
                                         </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="54" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-chat"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">FINANCIAL CONSULTING</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="52" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-hammer-2"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">INSURANCE CONSULTING</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40"></div>
+                                        <br><br><br>
+                                        {% endfor %}
+                                       
                                     </div><!-- /.col-md-4 -->
 
-                                    <div class="col-md-4">
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-signature-1"></i>
+                                    <div class="col-md-6">
+                                        {% for services in services_off_content2 %}
+                                        <div class="themesflat-icon-box style-3 height-fix clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
+                                            <div class="image-wrap">
+                                                <img src="{{services.imageURL}}" alt="">
                                             </div>
 
-                                            <h3 class="heading"><a href="#">EDUCATION PLANNING</a></h3>
+                                            <h3 class="heading"><a href="/services/{{services.services_Name}}">{{services.services_Name}}</a></h3>
 
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
+                                            <p class="description">{{services.description|linebreaksbr}}</p>
                                         </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="54" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-graphic"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">INVESTMENT MANAGEMENT</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="52" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-security"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">PROTECTION PLANNING</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="0" data-mobi="40" data-smobi="40"></div>
+                                        <br><br><br>
+                                        {% endfor %}
+                                       
                                     </div><!-- /.col-md-4 -->
 
-                                    <div class="col-md-4">
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-safebox-3"></i>
-                                            </div>
+                                    
 
-                                            <h3 class="heading"><a href="#">RETIREMENT & INCOME</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="54" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-buildings-2"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">ESTATE PLANNING</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="52" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-icon-box style-3 clearfix icon-left w70 dark-bg align-left rounded-100 has-width">
-                                            <div class="icon-wrap">
-                                                <i class="finance-icon-cheque-2"></i>
-                                            </div>
-
-                                            <h3 class="heading"><a href="#">TAXES PREPARATION</a></h3>
-
-                                            <p class="desc">We've devoted our careers to providing the holistic wealth management that helps clients reach their financial goals.</p>
-                                        </div><!-- /.themesflat-icon-box -->
-                                    </div><!-- /.col-md-4 -->
+                                    
 
                                     <div class="col-md-12">
                                         <div class="themesflat-spacer clearfix" data-desktop="107" data-mobi="60" data-smobi="60"></div>
@@ -540,7 +489,7 @@
                         </div>
                         <!-- END ANALYSIS -->
 
-                        <div class="row-request">
+                        <div class="row-request" id="request">
                             <div class="container-fluid">
                                 <div class="row equalize sm-equalize-auto">
                                     <div class="col-md-6 half-background style-3">
@@ -592,74 +541,7 @@
                             </div>
                         </div>
 
-                       
-
-                        <!-- PARTNERS -->
-                        <div class="row-partner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="themesflat-spacer clearfix" data-desktop="60" data-mobi="40" data-smobi="40"></div>
-
-                                        <div class="themesflat-partner style-1 arrow-center offset30 offset-v0 has-arrows arrows-circle w32" data-auto="false" data-loop="false" data-column="5" data-column2="3" data-column3="2" data-gap="60"><div class="owl-carousel owl-theme">
-                                            <div class="partner-item clearfix">
-                                                <div class="inner">
-                                                	<a target="_blank" href="#">
-                                                		<div class="thumb">
-                                                            <img src="{% static 'img/partners/logo-1.png' %}" alt="Image">
-                                                		</div>
-                                                	</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="partner-item clearfix">
-                                                <div class="inner">
-                                                    <a target="_blank" href="#">
-                                                        <div class="thumb">
-                                                            <img src="{% static 'img/partners/logo-2.png' %}" alt="Image">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="partner-item clearfix">
-                                                <div class="inner">
-                                                    <a target="_blank" href="#">
-                                                        <div class="thumb">
-                                                            <img src="{% static 'img/partners/logo-3.png' %}" alt="Image">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="partner-item clearfix">
-                                                <div class="inner">
-                                                    <a target="_blank" href="#">
-                                                        <div class="thumb">
-                                                            <img src="{% static 'img/partners/logo-4.png' %}" alt="Image">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="partner-item clearfix">
-                                                <div class="inner">
-                                                    <a target="_blank" href="#">
-                                                        <div class="thumb">
-                                                            <img src="{% static 'img/partners/logo-5.png' %}" alt="Image">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div></div><!-- /.themesflat-partner -->
-
-                                        <div class="themesflat-spacer clearfix" data-desktop="64" data-mobi="40" data-smobi="40"></div>
-                                    </div><!-- /.col-md-12 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.container -->
-                        </div>
-                        <!-- END PARTNERS -->
+                        <br><br><br><br>
 
                     
                     </div><!-- /.page-content -->
@@ -671,30 +553,7 @@
     
 
     <!-- Bottom -->
-    <div id="bottom" class="clearfix style-1">
-        <div id="bottom-bar-inner" class="themesflat-container">
-            <div class="bottom-bar-inner-wrap">
-                <div class="bottom-bar-content">
-                    <div id="copyright" class="padding-left-9">
-                        &copy; <a href="#">COPYRIGHT FINANCE</a>. DESIGN BY @DOANDU WITH LOVE.
-                    </div><!-- /#copyright -->
-                </div><!-- /.bottom-bar-content -->
-
-                <div class="bottom-bar-menu">
-                    <ul class="bottom-nav">
-                        <li class="menu-item"><a href="#">About Us</a></li>
-                        <li class="menu-item"><a href="#">Terms</a></li>
-                        <li class="menu-item"><a href="#">Services</a></li>
-                        <li class="menu-item"><a href="#">Contacts</a></li>
-                    </ul>
-                </div><!-- /.bottom-bar-menu -->
-            </div>
-        </div>
-    </div><!-- /#bottom -->
-</div><!-- /#page -->
-</div><!-- /#wrapper -->
-
-<a id="scroll-top"></a>
+   
 
 
 

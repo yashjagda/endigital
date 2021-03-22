@@ -1,1 +1,18 @@
-<h1>ThankYouuuu</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You!</h1>
+    <p class="lead"><strong>Your request was successfully received</strong> we will contact you as soon as possible</p>
+    <hr>
+    <p>
+    <a href="">Contact us</a>
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" href="{% url 'landing:index' %}" role="button">Continue to homepage</a>
+    </p>
+  </div>
+
+  {% endblock %}

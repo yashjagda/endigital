@@ -8,8 +8,9 @@
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
+    <meta name="description" content="Here is a precise description of my awesome webpage.">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Endigital</title>
+    <title>{% block title %} En-Digital{% endblock %}</title>
 
    
 
@@ -30,7 +31,7 @@
     <link rel="stylesheet" href="{% static 'css/vegas.css' %}">
     <link rel="stylesheet" href="{% static 'css/shortcodes.css' %}">
     <link rel="stylesheet" href="{% static 'css/woocommerce.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animations.css' %}">
+    
     <link rel="stylesheet"
           href=""https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,500i,600,600i,700|Lato:300,300i,400,400i,700,700i&amp;subset=latin"">
          
@@ -110,11 +111,19 @@
                                 <li class="menu-item  menu-item-has-children"><a href="{% url 'landing:index' %}">Home</a>
                                 </li>
 
-                                <li class="menu-item menu-item-has-children"><a href="#">Features</a>
-                                    
+                                <li class="menu-item menu-item-has-children"><a href="#services">Services</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="/services/SEO">SEO</a></li>
+                                        <li class="menu-item"><a href="/services/Google Adwords">Google Adwords</a></li>
+                                        <li class="menu-item"><a href="/services/Website Development">Website Development</a></li>
+                                        <li class="menu-item"><a href="/services/UI-UX Suggestions">UI/UX Suggestions</a></li>
+                                        <li class="menu-item"><a href="/services/Social Media Marketing">Social Media Marketing</a></li>
+                                        <li class="menu-item"><a href="/services/Programmatic Advertisements">Programmatic Advertisements</a></li>
+                                    </ul> 
+                                      
                                 </li>
 
-                                <li class="menu-item menu-item-has-children"><a href="#">About Us</a>
+                                <li class="menu-item menu-item-has-children" id="click"><a href="#request">Contact Us</a>
                                     
                                 </li>
 
@@ -140,7 +149,169 @@
         </header><!-- /#site-header -->
     </div><!-- #site-header-wrap -->
     {% block content %} {% endblock %}
+    <footer id="footer">
+        <div id="footer-widgets" class="themesflat-container title-style-1">
+            <div class="themesflat-row gutter-30">
+                <div class="span_1_of_4 col">
+                    <div class="widget widget_text padding-left-7">
+                        <div class="textwidget">
+                            <p class="margin-bottom-22">
+                                <img src="" width="226" height="50" alt="Finance" data-retina="" data-width="226" data-height="50">
+                            </p>
+                            <p>One-stop solutions to take your business online.
+                                A full suite digital marketing agency offering SEO, SEA, SEM, SMM, and more…
+                                </p>
+                        </div>
+                    </div><!-- /.widget_text -->
 
+                    <div class="widget widget_information padding-left-7">
+                        <ul>
+                            <li class="address clearfix">
+                                <div class="inner">
+                                    <i class=" finance-icon-map"></i>
+                                    <span class="text">2835 Vidor Ave, San Antonio</span>
+                                </div>
+                            </li>
+                            <li class="email clearfix">
+                                <div class="inner">
+                                <i class=" finance-icon-Email02"></i>
+                                <span class="text">support@finance.com</span>
+                                </div>
+                            </li>
+                            <li class="phone clearfix">
+                                <div class="inner">
+                                <i class=" finance-icon-Phone"></i>
+                                <span class="text">+1 (100) 380-790  /  6:30 AM - 6:30 PM</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- /.widget_information -->
+                </div><!-- /.span_1_of_4 -->
+
+                <div class="span_1_of_4 col">
+                    <div class="widget widget_twitter margin-top-6 padding-left-13">
+                        <h2 class="widget-title"><span>Location</span></h2>
+                        <div class="widget widget_information padding-left-7">
+                            <ul>
+                                <li class="address clearfix">
+                                    <div class="inner">
+                                        <i class=" finance-icon-map"></i>
+                                        <span class="text">603 Alka Apts, Gorai, Borivali(West), Mumbai</span>
+                                    </div>
+                                </li>
+                                <li class="email clearfix">
+                                    <div class="inner">
+                                    <i class=" finance-icon-Email02"></i>
+                                    <span class="text">ruchitvaniya@gmail.com</span>
+                                    </div>
+                                </li>
+                                <li class="phone clearfix">
+                                    <div class="inner">
+                                    <i class=" finance-icon-Phone"></i>
+                                    <span class="text">+1 (100) 380-790  /  3:30 PM - 9:30 PM</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- /.widget_recent_news -->
+                </div><!-- /.span_1_of_4 -->
+
+                <div class="span_1_of_4 col">
+                    <div class="widget widget_tag_cloud margin-top-6 padding-left-9">
+                        <h2 class="widget-title margin-bottom-43"><span>Services</span></h2>
+                        <div class="tagcloud">
+                            <a href="#">SEO</a>
+                            <a href="#">Google AdWords</a>
+                             <a href="#">Website Development</a>
+                             <a href="#">UI & UX Suggestions</a>
+                             <a href="#">Social Media Marketing</a>
+                             <a href="#">Programmatic Ads</a>                           
+                        </div>
+                    </div><!-- /.widget_tag_cloud -->
+                </div><!-- /.span_1_of_4 -->
+
+                <div class="span_1_of_4 col">
+                    <div class="widget widget_flickr margin-top-6 padding-left-6">
+                        <h2 class="widget-title"><span>Logo</span></h2>
+
+                        <div class="flickr-wrap clearfix col3 g12">
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="flickr_badge_image">
+                                <a href="#" target="_blank">
+                                <div class="item">
+                                    <img src="" alt="Image">
+                                </div>
+                                </a>
+                            </div>
+                        </div><!-- /.instagram-wrap -->
+                    </div><!-- /.widget_instagram -->
+                </div><!-- /.span_1_of_4 -->
+            </div><!-- /.themesflat-row -->
+        </div><!-- /#footer-widgets -->
+    </footer><!-- /#footer -->
+    <div id="bottom" class="clearfix style-1">
+        <div id="bottom-bar-inner" class="themesflat-container">
+            <div class="bottom-bar-inner-wrap">
+                <div class="bottom-bar-content">
+                    <div id="copyright" class="padding-left-9">
+                        &copy; <a href="#">COPYRIGHT FINANCE</a>. DESIGN BY @DOANDU WITH LOVE.
+                    </div><!-- /#copyright -->
+                </div><!-- /.bottom-bar-content -->
+
+                <div class="bottom-bar-menu">
+                    <ul class="bottom-nav">
+                        <li class="menu-item"><a href="#">About Us</a></li>
+                        <li class="menu-item"><a href="#">Terms</a></li>
+                        <li class="menu-item"><a href="#">Services</a></li>
+                        <li class="menu-item"><a href="#">Contacts</a></li>
+                    </ul>
+                </div><!-- /.bottom-bar-menu -->
+            </div>
+        </div>
+    </div><!-- /#bottom -->
+</div><!-- /#page -->
+</div><!-- /#wrapper -->
+
+<a id="scroll-top"></a>
 
     <!-- Javascript -->
 <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -155,7 +326,7 @@
 <script src="{% static 'js/vegas.js'%}"></script>
 <script src="{% static 'js/shortcodes.js'%}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/css3-animate-it.js' %}"></script>
+
 
 
 <!-- Revolution Slider -->
